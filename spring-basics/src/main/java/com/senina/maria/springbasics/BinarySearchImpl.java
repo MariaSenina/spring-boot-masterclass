@@ -1,11 +1,15 @@
 package com.senina.maria.springbasics;
 
 public class BinarySearchImpl {
+    private SortAlgorithm sortAlgorithm;
+
+    public BinarySearchImpl(SortAlgorithm sortAlgorithm) {
+        this.sortAlgorithm = sortAlgorithm;
+    }
 
     public int binarySearch(int[] numbers, int numberToSearchFor) {
         // Sort an array
-        BubbleSortAlgorithm bubbleSortAlgorithm = new BubbleSortAlgorithm();
-        int[] sortedNumbers = bubbleSortAlgorithm.sort(numbers);
+        int[] sortedNumbers = sortAlgorithm.sort(numbers);
 
         // Search the array
 
