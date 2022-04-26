@@ -1,4 +1,4 @@
-package com.senina.maria.springbasics;
+package com.senina.maria.springbasics.basic;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;

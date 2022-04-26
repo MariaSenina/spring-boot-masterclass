@@ -1,4 +1,4 @@
-package com.senina.maria.springbasics;
+package com.senina.maria.springbasics.basic;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
