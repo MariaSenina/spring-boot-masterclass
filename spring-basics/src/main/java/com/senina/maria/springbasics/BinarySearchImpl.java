@@ -1,12 +1,14 @@
 package com.senina.maria.springbasics;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class BinarySearchImpl {
 
     @Autowired
+    @Qualifier("quick")
     private SortAlgorithm bubbleSortAlgorithm;
     // NOTE: @Primary has higher priority when compared to Autowiring by name.
 
