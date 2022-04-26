@@ -7,15 +7,16 @@ import org.springframework.stereotype.Component;
 public class BinarySearchImpl {
 
     @Autowired
-    private SortAlgorithm sortAlgorithm;
+    private SortAlgorithm bubbleSortAlgorithm;
+    // NOTE: @Primary has higher priority when compared to Autowiring by name.
 
-    public BinarySearchImpl(SortAlgorithm sortAlgorithm) {
-        this.sortAlgorithm = sortAlgorithm;
+    public BinarySearchImpl(SortAlgorithm bubbleSortAlgorithm) {
+        this.bubbleSortAlgorithm = bubbleSortAlgorithm;
     }
 
     public int binarySearch(int[] numbers, int numberToSearchFor) {
         // Sort an array
-        int[] sortedNumbers = sortAlgorithm.sort(numbers);
+        int[] sortedNumbers = bubbleSortAlgorithm.sort(numbers);
 
         // Search the array
 
