@@ -15,6 +15,8 @@ public class SpringBasicsXMLContextApplication {
 		try (ClassPathXmlApplicationContext applicationContext =
 				new ClassPathXmlApplicationContext("applicationContext.xml")) {
 
+			LOGGER.info("Beans Added -> {}", (Object) applicationContext.getBeanDefinitionNames());
+
 			XmlPersonDAO personDAO =
 					applicationContext.getBean(XmlPersonDAO.class);
 			LOGGER.info("{}", personDAO);
