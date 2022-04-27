@@ -1,20 +1,27 @@
 package com.senina.maria.springbasics;
 
 import com.senina.maria.springbasics.basic.BinarySearchImpl;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
-@SpringBootApplication
+@Configuration
+@ComponentScan
 public class SpringBasicsBasicApplication {
 
 	public static void main(String[] args) {
 //		BinarySearchImpl binarySearch = new BinarySearchImpl(new BubbleSortAlgorithm());
 
 		// Application Context
-		ApplicationContext applicationContext = SpringApplication.run(SpringBasicsBasicApplication.class, args);
-		BinarySearchImpl binarySearch = applicationContext.getBean(BinarySearchImpl.class);
-		int result = binarySearch.binarySearch(new int[] {12, 4, 6}, 3);
-		System.out.println(result);
+		// Auto-close using "try"
+		try (AnnotationConfigApplicationContext applicationContext =
+				new AnnotationConfigApplicationContext(
+						SpringBasicsBasicApplication.class)) {
+
+			BinarySearchImpl binarySearch =
+					applicationContext.getBean(BinarySearchImpl.class);
+			int result = binarySearch.binarySearch(new int[]{12, 4, 6}, 3);
+			System.out.println(result);
+		}
 	}
 }
