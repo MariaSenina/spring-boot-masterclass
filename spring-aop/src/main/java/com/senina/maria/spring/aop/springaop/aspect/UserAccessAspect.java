@@ -15,7 +15,7 @@ public class UserAccessAspect {
 
     // What do we want to intercept?
     // execution(* PACKAGE.*.*(..))
-    @Before("execution(* com.senina.maria.spring.aop.springaop.business.*.*(..))")
+    @Before("com.senina.maria.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()")
     public void before(JoinPoint joinPoint) {
         logger.info("Checking user access level");
         logger.info("Allowed {}", joinPoint);

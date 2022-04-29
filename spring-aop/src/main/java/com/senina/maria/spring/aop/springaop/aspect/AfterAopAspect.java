@@ -14,19 +14,19 @@ import org.springframework.context.annotation.Configuration;
 public class AfterAopAspect {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @AfterReturning(value = "execution(* com.senina.maria.spring.aop.springaop.business.*.*(..))",
+    @AfterReturning(value = "com.senina.maria.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()",
             returning = "result")
     public void afterReturning(JoinPoint joinPoint, Object result) {
         logger.info("{} returned with value {}", joinPoint, result);
     }
 
-    @AfterThrowing(value = "execution(* com.senina.maria.spring.aop.springaop.business.*.*(..))",
+    @AfterThrowing(value = "com.senina.maria.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()",
             throwing = "exception")
     public void afterThrowing(JoinPoint joinPoint, Exception exception) {
         logger.info("{} threw exception {}", joinPoint, exception);
     }
 
-    @After(value = "execution(* com.senina.maria.spring.aop.springaop.business.*.*(..))")
+    @After(value = "com.senina.maria.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()")
     public void afterThrowing(JoinPoint joinPoint) {
         logger.info("After {}", joinPoint);
     }
