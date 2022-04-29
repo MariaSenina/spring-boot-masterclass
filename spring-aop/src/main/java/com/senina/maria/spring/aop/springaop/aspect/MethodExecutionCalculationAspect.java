@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 public class MethodExecutionCalculationAspect {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Around("com.senina.maria.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()")
+    @Around("com.senina.maria.spring.aop.springaop.aspect.CommonJoinPointConfig.trackTimeAnnotation()")
     public void before(ProceedingJoinPoint joinPoint) throws Throwable {
         // startTime = x;
         long startTime = System.currentTimeMillis();

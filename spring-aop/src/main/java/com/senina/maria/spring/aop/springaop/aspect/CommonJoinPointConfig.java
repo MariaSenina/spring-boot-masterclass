@@ -10,7 +10,7 @@ public class CommonJoinPointConfig {
     public void dataLayerExecution() {}
 
     @Pointcut("com.senina.maria.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution() " +
-            "&& com.senina.maria.spring.aop.springaop.aspect.CommonJoinPointConfig.dataLayerExecution{}")
+            "&& com.senina.maria.spring.aop.springaop.aspect.CommonJoinPointConfig.dataLayerExecution()")
     public void allLayerExecution() {}
 
     @Pointcut("bean(*dao*)")
@@ -18,4 +18,7 @@ public class CommonJoinPointConfig {
 
     @Pointcut("within(com.senina.maria.spring.aop.springaop.data..*)")
     public void dataLayerExecutionWithWithin() {}
+
+    @Pointcut("@annotation(com.senina.maria.spring.aop.springaop.aspect.TrackTime)")
+    public void trackTimeAnnotation(){}
 }
