@@ -1,14 +1,31 @@
 package com.senina.maria.database.databasedemo.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.time.LocalDateTime;
 
+@Entity
+// By default, class Person would get mapped to a table called "person". Use @Table(name="xxx") to change.
 public class Person {
+    @Id
+    @GeneratedValue
     private int id;
+
+    // Use @Column(name = "xxx") to map to a column with a different name
     private String name;
     private String location;
     private LocalDateTime birthDate;
 
+    // We have to have a no-args constructor
     public Person() {
+    }
+
+    // A constructor to allow JPA to generate an ID for us
+    public Person(String name, String location, LocalDateTime birthDate) {
+        this.name = name;
+        this.location = location;
+        this.birthDate = birthDate;
     }
 
     public Person(int id, String name, String location, LocalDateTime birthDate) {
