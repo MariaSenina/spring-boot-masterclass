@@ -17,4 +17,11 @@ public class PersonJpaRepository {
     public Person findById(int id) {
         return manager.find(Person.class, id);
     }
+
+    // Updates OR Inserts based on whether the passed person has an ID set or not
+    // If the ID is already set, it will update the data
+    // If the ID is not set yet, a new Person will be inserted
+    public Person update(Person person) {
+        return manager.merge(person);
+    }
 }
