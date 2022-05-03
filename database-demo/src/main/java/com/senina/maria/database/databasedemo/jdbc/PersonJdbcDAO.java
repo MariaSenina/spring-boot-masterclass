@@ -17,4 +17,11 @@ public class PersonJdbcDAO {
     public List<Person> findAll() {
         return jdbcTemplate.query("select * from person", new BeanPropertyRowMapper<>(Person.class));
     }
+
+    // SELECT * FROM person WHERE id = xxx
+    public Person findById(int id) {
+        return jdbcTemplate.queryForObject("select * from person where id = ?",
+                new BeanPropertyRowMapper<>(Person.class),
+                id);
+    }
 }
