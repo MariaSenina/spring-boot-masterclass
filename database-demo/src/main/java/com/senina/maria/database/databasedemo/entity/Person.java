@@ -3,10 +3,12 @@ package com.senina.maria.database.databasedemo.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import java.time.LocalDateTime;
 
 @Entity
 // By default, class Person would get mapped to a table called "person". Use @Table(name="xxx") to change.
+@NamedQuery(name="find_all_people", query="select p from Person p")
 public class Person {
     @Id
     @GeneratedValue
