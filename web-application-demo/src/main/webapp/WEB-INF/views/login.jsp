@@ -10,5 +10,8 @@
       %>
       <div>Local date is <%=date%></div>
       <p>My first JSP ${name}</p>
+      <form action="/login.do" method="post">
+          <label>Enter your name</label><input type="text" name="name" /><input type="submit">
+      </form>
   </body>
 </html>
