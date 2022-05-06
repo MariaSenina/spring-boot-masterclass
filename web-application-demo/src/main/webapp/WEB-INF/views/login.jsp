@@ -8,10 +8,14 @@
       <%
           LocalDate date = LocalDate.now();
       %>
+      <h1>Welcome!</h1>
       <div>Local date is <%=date%></div>
-      <p>My first JSP ${name}</p>
+      <p style="color: red">${errorMessage}</p>
+      <p>Enter your Login information below</p>
       <form action="/login.do" method="post">
-          <label>Enter your name</label><input type="text" name="name" /><input type="submit">
+          <label>Name: </label><input type="text" name="name" /><br><br>
+          <label>Password: </label><input type="password" name="password" /><br><br>
+          <input type="submit" value="Login">
       </form>
   </body>
 </html>

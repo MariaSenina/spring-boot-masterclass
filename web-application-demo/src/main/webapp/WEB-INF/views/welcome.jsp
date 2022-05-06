@@ -5,5 +5,6 @@
   </head>
   <body>
     <h1>Welcome ${name}</h1>
+    <p>Your password is ${password}</p>
   </body>
 </html>
