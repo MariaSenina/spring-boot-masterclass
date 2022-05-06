@@ -12,7 +12,7 @@
       <div>Local date is <%=date%></div>
       <p style="color: red">${errorMessage}</p>
       <p>Enter your Login information below</p>
-      <form action="login.do" method="post">
+      <form action="login" method="post">
           <label>Name: </label><input type="text" name="name" /><br><br>
           <label>Password: </label><input type="password" name="password" /><br><br>
           <input type="submit" value="Login">
