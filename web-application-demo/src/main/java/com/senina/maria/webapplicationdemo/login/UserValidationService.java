@@ -1,4 +1,4 @@
-package com.senina.maria.webapplicationdemo.jee;
+package com.senina.maria.webapplicationdemo.login;
 
 public class UserValidationService {
     public boolean isValidUser(String userName, String password) {
